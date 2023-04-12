@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Roboto:wght@300&display=swap');
+
+h1 {
+    color: white;
+}
+
+body {
+    background-color: rgb(15, 15, 15);
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+
+
+
+/*------------------------------- Header --------------------------------*/
+
+
+header {
+    border-bottom: .3rem solid rgba(0, 78, 245, 0.7);
+    padding: 5rem;
+    text-align: center;
+    background-color: #000C24;
+}
+
+#title {
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 10px #004EF5;
+}
+
+#taskInput {
+    width: 50%;
+    height: 2.2rem;
+    background-color: rgb(15, 15, 15);
+    border: .15rem solid rgba(0, 78, 245, 0.6);
+    border-radius: .5rem;
+    color: #fff;
+    font-size: 1rem;
+    padding-left: 5px;
+}
+
+#addButton {
+    width: 15%;
+    height: 2.2rem;
+    border-radius: .5rem;
+    border: .15rem solid rgba(0, 78, 245, 0.6);
+    background-color: rgb(15, 15, 15);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#addButton:hover {
+    background-color: rgb(30, 30, 30);
+}
+
+
+
+
+
+/*--------------------- Delete Confirmation ------------------------*/
+
+#deleteBackground {
+    background-color: rgba(2, 76, 100, 0.5);
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    backface-visibility: hidden;
+}
+
+#deleteBox {
+
+    margin: auto;
+    background-color: #222728;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 30rem;
+    text-align: center;
+}
+
+
+#deleteMessage,
+#deleteConfirmationButtons {
+    display: flex;
+    justify-content: center;
+
+}
+
+#deleteMessage {
+    margin-bottom: 2rem;
+}
+
+
+/*--------------------- Buttons ------------------------*/
+
+#deleteConfirmationButtons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+#deleteButton {
+    text-decoration: none;
+    background-color: rgba(255, 0, 0, 0.5);
+    color: white;
+    padding: 7px;
+    border-radius: 20px;
+    border-width: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 25px;
+}
+
+#cancelButton,
+#editButton {
+    text-decoration: none;
+    background-color: rgba(0, 128, 0, 0.5);
+    padding: 7px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out;
+    color: white;
+    font-size: 25px;
+}
+
+
+#editButton:hover,
+#cancelButton:hover {
+    background-color: rgb(0, 51, 0);
+}
+
+.button:hover,
+#deleteButton:hover {
+    background-color: rgb(95, 0, 0);
+}
+
+#mainButtons {
+    margin-right: 20px;
+}
+
+#deleteMessage {
+    font-size: 25px;
+}
+
+
+
+
+
+
+/*------------------------- Tasks ------------------------*/
+
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 30px;
+    background-color: rgb(39, 39, 39);
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in;
+    margin: auto;
+    font-size: 25px;
+    border: .15rem solid rgba(0, 78, 245, 0.6);
+}
+
+li:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+li div a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+
+}
+
+li div span {
+    font-size: 0.9rem;
+    margin-left: 1.2rem;
+    color: #ccc;
+    font-style: italic;
+    text-decoration: none;
+}
+
+#noTask {
+    text-align: center;
+    margin-top: 12rem;
+    text-shadow: 1px 1px 10px #004EF5;
+    font-size: 2rem;
+}
+
+ul li.check-true {
+    background-color: #888888;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+ul li div,
+#mainButtons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+ul li a i.check-true::before {
+    margin-right: 1rem;
+}
+
+ul li a i.check-false::before {
+    margin-right: 1rem;
+
+}
+
+
+
+
+/*------------------------------ Footer --------------------------------*/
+
+
+footer {
+    text-align: center;
+
+    background-color: #000C24;
+    min-width: 100%;
+    text-shadow: 1px 1px 10px #004EF5;
+    font-size: 1.2rem;
+    border-top: .3rem solid rgba(0, 78, 245, 0.7);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+section {
+    margin-bottom: 2rem;
+    padding-bottom: 11vh;
+}
+
+
+
+
+/*-----------------------------------------------------------------*/
+
+
+
+@media screen and (max-width: 500px) {
+    #addButton {
+        min-width: fit-content;
+        width: 35%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #taskInput {
+        width: 60%;
+    }
+
+    #mainButtons {
+        display: flex;
+    }
+
+    #mainButtons a {
+        margin-left: 5px;
+    }
+}
+
+
+/*--------------------------------- pop-up ------------------------------*/
+
+
+
+
+.message-success {
+    width: 18rem;
+    height: 9rem;
+    position: absolute;
+    bottom: 8px;
+    left: 25px;
+    background-color: #5fa55e;
+    border-radius: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.message-danger {
+    width: 18rem;
+    height: 9rem;
+    position: absolute;
+    bottom: 8px;
+    left: 25px;
+    background-color: #a55e5e;
+    border-radius: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.message p {
+    font-size: 1.3rem;
+    margin-top: 45px;
+    text-align: center;
+
+}
+
+.message span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: .2rem .2rem 0 0;
+    font-size: 1.5rem;
+    width: 2rem;
+    text-align: center;
+    color: white;
+    transition-property: all;
+    transition-duration: .3s;
+}
+
+.message span:hover {
+    background-color: red;
+}
+
+
+.animation-success {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: green;
+    width: 18rem;
+    height: 1rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    animation-name: success;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+.animation-danger {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgb(128, 0, 0);
+    width: 18rem;
+    height: 1rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    animation-name: danger;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+@keyframes danger {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 18rem;
+    }
+}
+
+@keyframes success {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 18rem;
+    }
+}

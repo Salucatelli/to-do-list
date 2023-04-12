@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <title>To Do List</title>
+</head>
+
+<body>
+
+  <% if(obs.message!="" ) { %>
+    <%- include("./components/messages") %>
+      <% } %>
+        <header>
+          <% if(obs.task==null || obs.task==undefined || obs.task.task=="" ){ %>
+
+            <%- include("./components/form", {titleForm: "TO DO LIST" , action: "create" , value: "" , nameBtn: "ADD" })
+              %>
+
+              <% } else { %>
+
+                <%- include("./components/form", {titleForm: "TO DO LIST - EDIT" , action: `updateOne/${obs.task._id}` ,
+                  value: obs.task.task , nameBtn: "Update" }) %>
+
+                  <% } %>
+        </header>
+
+        <section id="tasks">
+
+          <% if(obs.tasksList=="" ) {%>
+
+            <div id="noTask">
+              There is no tasks at the moment...
+            </div>
+
+            <% } %>
+
+              <ul>
+                <% obs.tasksList.forEach((task)=>{ %>
+
+                  <br>
+                  <li class="check-<%= task.check%>">
+                    <div>
+                      <a href="/check/<%=task._id%>" class="check-<%=task.check%>">
+
+                        <% if(task.check) { %>
+                          <i class="bi bi-check2 check-<%=task.check%>"></i>
+                          <% } else { %>
+                            <i class="bi bi-square check-<%=task.check%>"></i>
+                            <% } %>
+                              <%= task.task %>
+                      </a>
+                      <span>
+                        Created at <%=task.date.toLocaleDateString("pt-br") %>
+                      </span>
+                    </div>
+                    <div id="mainButtons">
+                      <a id="editButton" class="button" href="/getById/<%= task._id %>"><i class="bi bi-pencil"></i></a>
+                      <a class="button" id="deleteButton" href="/deleteConfirm/<%= task._id %>"><i
+                          class="bi bi-trash"></i></a>
+                    </div>
+                  </li>
+                  <% }) %>
+              </ul>
+
+              <% if(obs.deleteId!=null) { %>
+                <%- include("./components/modalDel") %>
+                  <% } %>
+        </section>
+
+        <script src="/script.js"></script>
+</body>
+
+</html>
